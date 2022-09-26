@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Poppins&display=swap');
+
+:root {
+    --intense: #fc69a1;
+    --yellow: #ffff1a;
+    --f1: 'Poppins', sans-serif;
+    --f2: 'Gloria Hallelujah', cursive;
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #040509;
+    color: #fff;
+}
+
+/* Header */
+header {
+    width: 100%; 
+    height: 100vh; 
+    background-image: url('https://images.pexels.com/photos/4386973/pexels-photo-4386973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header div {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1 {
+    font-size: calc(1em + 3vw);
+    color: #000;
+    margin-bottom: 1rem;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+header a {
+    text-decoration: none;
+    background-color: var(--yellow); 
+    padding: 1rem 1.5rem;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.3rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+header a:hover {
+    background-color: var(--intense);
+}
+
+/* Main: General */
+
+main {
+    margin: 7rem;
+    line-height: 2;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+    height: 2px;
+    background-color: var(--yellow);
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+/* Main: About */
+
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+#about div:nth-of-type(2) {
+    align-self: end;
+}
+
+#about div:nth-of-type(2) img {
+    width: 100%; 
+}
+
+
+/* Main: Testimonials */
+
+.testimonials-container {
+    display: flex; 
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.testimonials span {
+    display: block;
+    font-family: var(--f2);
+    font-size: 1.3rem;
+}
+
+.testimonials span::before {
+    content: "-";
+    font-family: var(--f1);
+}
+
+/* Main: Contact */
+
+#contact {
+    display: grid; 
+    grid-template-columns: 1.7fr 1fr;
+    grid-gap: 1rem;
+}
+
+#contact > div:nth-of-type(2) {
+    align-self: end;
+}
+
+#contact img {
+    width: 100%;
+}
+
+#contact label,
+#contact input,
+#contact textarea {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    font-family: var(--f1);
+}
+
+form button { 
+    padding: 1rem 1.5rem; 
+    background-color: var(--yellow);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* CSS rules for Intersection Observer */
+h1, p {
+    opacity: 0; 
+    position: relative;
+    bottom: -40px;
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    bottom: 0;
+}
+
+.testimonials:nth-of-type(2) p.show {
+    transition-delay: 0.5s;
+}
+
+.testimonials:nth-of-type(3) p.show {
+    transition-delay: 1s;
+}
